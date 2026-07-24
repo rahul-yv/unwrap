@@ -60,4 +60,4 @@ Try it yourself first, then check [`solutions/Exercise1Test.java`](./solutions/E
 2. **What does `@Test` do, and how does JUnit discover test methods?** — It's an annotation marking a method as a test case; JUnit's platform scans classes for methods annotated `@Test` (via reflection) and invokes each one independently, reporting pass/fail per method.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)

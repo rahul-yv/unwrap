@@ -23,7 +23,8 @@ jobs:
           set -e
           find languages/java \( -name "Example.java" -o -path "*/solutions/Exercise*.java" \) \
             -not -path "*/11_modules_packages/*" \
-            -not -path "*/12_testing/*" | while read -r f; do
+            -not -path "*/12_testing/*" \
+            -not -path "*/14_databases/*" | while read -r f; do
             echo "Running $f"
             java "$f"
           done
@@ -35,6 +36,13 @@ jobs:
           javac -d "$out" "$dir/mypackage/Helpers.java"
           java -cp "$out" "$dir/Example.java"
           java -cp "$out" "$dir/solutions/Exercise1.java"
+      - name: Run the databases topic with the SQLite JDBC driver
+        run: |
+          set -e
+          curl -sL -o /tmp/sqlite-jdbc.jar "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.46.1.3/sqlite-jdbc-3.46.1.3.jar"
+          dir=languages/java/14_databases
+          java -cp /tmp/sqlite-jdbc.jar "$dir/Example.java"
+          java -cp /tmp/sqlite-jdbc.jar "$dir/solutions/Exercise1.java"
       - name: Run the testing topic with JUnit
         run: |
           set -e
