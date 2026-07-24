@@ -9,7 +9,8 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] TypeScript topics 01-18 — TypeScript track complete
 - [x] Go topics 01-18 — Go track complete
 - [x] Java topics 01-06 (variables → functions)
-- [ ] Java topics 07-18 (collections → interview)
+- [x] Java topics 07-12 (collections → testing)
+- [ ] Java topics 13-18 (networking → interview)
 
 ## Next
 

@@ -43,4 +43,4 @@ Try it yourself first, then check [`solutions/Exercise1.java`](./solutions/Exerc
 2. **What's the difference between `Function<T, R>`, `Supplier<T>`, `Consumer<T>`, and `Predicate<T>`?** — Standard functional interfaces for common lambda shapes: `Function` takes one argument and returns a value, `Supplier` takes none and returns a value, `Consumer` takes one and returns nothing (used for side effects), `Predicate` takes one and returns `boolean` (used for filtering/testing).
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
