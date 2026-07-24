@@ -1,0 +1,27 @@
+name: rust-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/rust/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/rust/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Compile and run every example and solution
+        run: |
+          set -e
+          out=$(mktemp -d)
+          find languages/rust \( -name "example.rs" -o -path "*/solutions/exercise_*.rs" \) | while read -r f; do
+            echo "Running $f"
+            bin="$out/$(basename "$f" .rs)-$RANDOM"
+            rustc -D warnings "$f" -o "$bin"
+            "$bin"
+          done
