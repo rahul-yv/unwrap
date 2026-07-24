@@ -1,0 +1,31 @@
+name: typescript-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/typescript/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/typescript/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: languages/typescript
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+      - run: npx tsc --project tsconfig.json
+      - name: Run every compiled example and solution
+        run: |
+          set -e
+          find dist -name "*.js" | while read -r f; do
+            echo "Running $f"
+            node "$f"
+          done
