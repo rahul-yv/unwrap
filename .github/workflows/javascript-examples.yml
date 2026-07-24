@@ -1,0 +1,26 @@
+name: javascript-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/javascript/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/javascript/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run every example and solution
+        run: |
+          set -e
+          find languages/javascript -name "example.js" -o -path "*/solutions/exercise_*.js" | while read -r f; do
+            echo "Running $f"
+            node "$f"
+          done
