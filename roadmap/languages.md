@@ -33,7 +33,7 @@ Every language folder under `languages/` follows the same 18-topic sequence, so 
 | Java | done |
 | Go | done |
 | Rust | done |
-| C | not started |
+| C | in progress |
 | C++ | not started |
 | C# | not started |
 | Kotlin | not started |
