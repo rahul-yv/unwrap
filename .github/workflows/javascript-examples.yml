@@ -20,7 +20,14 @@ jobs:
       - name: Run every example and solution
         run: |
           set -e
-          find languages/javascript -name "example.js" -o -path "*/solutions/exercise_*.js" | while read -r f; do
+          find languages/javascript \( -name "example.js" -o -name "example.mjs" -o -path "*/solutions/exercise_*.js" -o -path "*/solutions/exercise_*.mjs" \) | while read -r f; do
             echo "Running $f"
             node "$f"
+          done
+      - name: Run node:test files
+        run: |
+          set -e
+          find languages/javascript -name "test_*.js" | while read -r f; do
+            echo "Running $f"
+            node --test "$f"
           done

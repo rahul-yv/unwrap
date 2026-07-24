@@ -43,4 +43,4 @@ Try it yourself first, then check [`solutions/exercise_1.js`](./solutions/exerci
 3. **What's the difference between a function declaration and a function expression regarding hoisting?** — Declarations are hoisted with their full body and callable before their textual position; expressions (including arrow functions assigned to `const`/`let`) are only hoisted as an uninitialized binding, so calling them before the assignment throws a `ReferenceError`.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
