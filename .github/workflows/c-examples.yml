@@ -14,13 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compile and run every example and solution
+      - name: Compile and run every single-file example and solution
         run: |
           set -e
           out=$(mktemp -d)
-          find languages/c \( -name "example.c" -o -path "*/solutions/exercise_*.c" \) | while read -r f; do
+          find languages/c \( -name "example.c" -o -path "*/solutions/exercise_*.c" \) \
+            -not -path "*/11_modules_packages/*" | while read -r f; do
             echo "Running $f"
             bin="$out/$(basename "$f" .c)-$RANDOM"
             gcc -std=c17 -Wall -Wextra -Werror "$f" -o "$bin" -lm
             "$bin"
           done
+      - name: Compile and run modules_packages (multi-file)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          dir=languages/c/11_modules_packages
+          gcc -std=c17 -Wall -Wextra -Werror "$dir/example.c" "$dir/mypackage.c" -o "$out/example" -lm
+          "$out/example"
+          gcc -std=c17 -Wall -Wextra -Werror "$dir/solutions/exercise_1.c" "$dir/mypackage.c" -o "$out/exercise_1" -lm
+          "$out/exercise_1"

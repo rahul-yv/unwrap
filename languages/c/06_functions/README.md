@@ -47,4 +47,4 @@ Try it yourself first, then check [`solutions/exercise_1.c`](./solutions/exercis
 2. **What's the danger of returning a pointer to a local variable?** — The local variable's stack memory is reclaimed the moment the function returns; the returned pointer points at memory that may be immediately overwritten by whatever runs next, making any use of it undefined behavior.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
