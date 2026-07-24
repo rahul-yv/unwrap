@@ -4,7 +4,7 @@
 
 ## Example
 
-See [`example.<ext>`](./example.<ext>).
+See `example.<ext>`.
 
 ## Common mistakes
 
@@ -15,7 +15,7 @@ See [`example.<ext>`](./example.<ext>).
 
 <Task statement.>
 
-Solution: [`solutions/exercise_1.<ext>`](./solutions/exercise_1.<ext>)
+Solution: `solutions/exercise_1.<ext>`
 
 ## Interview questions
 
@@ -23,4 +23,4 @@ Solution: [`solutions/exercise_1.<ext>`](./solutions/exercise_1.<ext>)
 2. <question>
 
 ---
-← [Previous](../<NN-1>_<topic>/README.md) | [Next →](../<NN+1>_<topic>/README.md)
+← Previous: `<topic>/README.md` | Next: `<topic>/README.md`

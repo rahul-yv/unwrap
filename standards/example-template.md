@@ -15,7 +15,7 @@ Copy this structure into `languages/<language>/<NN_topic>/README.md` and fill it
 // long enough to show the real behavior.
 ```
 
-See [`example.<ext>`](./example.<ext>) for the full runnable file.
+See `example.<ext>` for the full runnable file.
 
 ## Common mistakes
 
@@ -26,7 +26,7 @@ See [`example.<ext>`](./example.<ext>) for the full runnable file.
 
 <Unambiguous task statement: given X, produce Y.>
 
-Try it yourself first, then check [`solutions/exercise_1.<ext>`](./solutions/exercise_1.<ext>).
+Try it yourself first, then check `solutions/exercise_1.<ext>`.
 
 ## Interview questions
 
@@ -36,4 +36,4 @@ Try it yourself first, then check [`solutions/exercise_1.<ext>`](./solutions/exe
 2. <question> — <short answer or approach>
 
 ---
-← [Previous: <Topic>](../<NN-1>_<topic>/README.md) | [Next: <Topic> →](../<NN+1>_<topic>/README.md)
+← Previous: `<topic>/README.md` | Next: `<topic>/README.md`
