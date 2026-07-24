@@ -22,17 +22,18 @@ jobs:
         run: |
           set -e
           find languages/java \( -name "Example.java" -o -path "*/solutions/Exercise*.java" \) \
-            -not -path "*/11_modules_packages/solutions/*" \
+            -not -path "*/11_modules_packages/*" \
             -not -path "*/12_testing/*" | while read -r f; do
             echo "Running $f"
             java "$f"
           done
-      - name: Run the modules_packages exercise (needs a compiled classpath)
+      - name: Run modules_packages (needs a compiled classpath, not the source launcher)
         run: |
           set -e
           dir=languages/java/11_modules_packages
           out=$(mktemp -d)
           javac -d "$out" "$dir/mypackage/Helpers.java"
+          java -cp "$out" "$dir/Example.java"
           java -cp "$out" "$dir/solutions/Exercise1.java"
       - name: Run the testing topic with JUnit
         run: |

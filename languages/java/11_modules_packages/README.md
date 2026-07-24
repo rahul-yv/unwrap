@@ -16,7 +16,7 @@ public class Helpers {
 ```
 
 ```java
-// using it — Example.java, a sibling of mypackage/
+// using it — Example.java
 import mypackage.Helpers;
 
 public class Example {
@@ -26,18 +26,18 @@ public class Example {
 }
 ```
 
-Run with `java Example.java` — the single-file source launcher auto-compiles sibling packages in the same directory. See [`Example.java`](./Example.java) and [`mypackage/`](./mypackage/) for the full runnable files.
+Unlike every other topic so far, this one needs a real compile step: `javac -d <out> mypackage/Helpers.java`, then `java -cp <out> Example.java`. See [`Example.java`](./Example.java) and [`mypackage/`](./mypackage/) for the full runnable files, and `exercises.md` for the exact commands.
 
 ## Common mistakes
 
-1. **Expecting the single-file launcher (`java File.java`) to resolve a package import from anywhere.** It only auto-compiles packages that are *siblings of the file you ran* (in the same directory tree) — a file nested one level deeper (like this topic's own `solutions/Exercise1.java`) can't see `mypackage/` the same way. Run `javac -d <out> mypackage/Helpers.java` first, then `java -cp <out> solutions/Exercise1.java`, to give the launcher a compiled classpath to find it on — see `exercises.md` for the exact command.
+1. **Expecting the single-file launcher (`java File.java`) to always resolve a local package import on its own.** Whether it auto-compiles a sibling package depends on the JDK version and exactly how the file is invoked — relying on it is fragile. The robust, version-independent approach is what real Java tooling (Maven/Gradle) does anyway: compile the dependency with `javac` first, then run against that classpath with `java -cp <out> File.java`.
 2. **A class not marked `public` when it needs to be used from another package.** No modifier (package-private) restricts visibility to the same package — a common source of "cannot find symbol" confusion when a class works fine within its own package but fails to import elsewhere.
 3. **Package directory structure not matching the `package` declaration.** `package com.example.util;` must live at `com/example/util/`, not just anywhere convenient — the compiler enforces this exactly.
 4. **Wildcard imports (`import mypackage.*;`)** to avoid listing individual classes — works, but obscures which specific classes are actually used, same downside as in other languages.
 
 ## Exercise
 
-Using `mypackage/Helpers.java`'s `greet(String name)`, write `exampleUsage()` in `solutions/Exercise1.java` returning `Helpers.greet("World")`. Because of the sibling-only resolution described above, running it needs a two-step command — see below.
+Using `mypackage/Helpers.java`'s `greet(String name)`, write `exampleUsage()` in `solutions/Exercise1.java` returning `Helpers.greet("World")`.
 
 Try it yourself first, then check [`solutions/Exercise1.java`](./solutions/Exercise1.java).
 
