@@ -47,4 +47,4 @@ Try it yourself first, then check [`solutions/exercise_1_test.go`](./solutions/e
 2. **What is a table-driven test, and why is it idiomatic in Go?** — A slice of test cases (input + expected output) iterated in a loop, usually with `t.Run` for named subtests — avoids duplicating near-identical test function bodies and gives each case an individually reportable name/result.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
