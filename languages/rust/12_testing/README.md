@@ -46,4 +46,4 @@ Try it yourself first, then check [`solutions/exercise_1.rs`](./solutions/exerci
 2. **What does `use super::*;` do inside a `tests` module?** — Imports everything from the parent module (where `tests` is nested) into scope, so test functions can call the functions/types being tested without repeating a full path.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
