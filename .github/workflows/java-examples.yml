@@ -1,0 +1,27 @@
+name: java-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/java/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/java/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+      - name: Run every example and solution (single-file source launcher)
+        run: |
+          set -e
+          find languages/java \( -name "Example.java" -o -path "*/solutions/Exercise*.java" \) | while read -r f; do
+            echo "Running $f"
+            java "$f"
+          done
