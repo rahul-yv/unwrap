@@ -44,4 +44,4 @@ Try it yourself first, then check [`solutions/exercise_1.ts`](./solutions/exerci
 2. **Does a passing type check mean the tested code is correct?** — No — types verify shape/type consistency, not logical correctness; a function can be perfectly well-typed and still return the wrong value for a given input, which is exactly what runtime tests are for.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
