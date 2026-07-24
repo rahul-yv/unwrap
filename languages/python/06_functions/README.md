@@ -47,4 +47,4 @@ Try it yourself first, then check [`solutions/exercise_1.py`](./solutions/exerci
 3. **What's the difference between `*args` and `**kwargs`?** — `*args` collects extra positional arguments into a tuple; `**kwargs` collects extra keyword arguments into a dict.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
