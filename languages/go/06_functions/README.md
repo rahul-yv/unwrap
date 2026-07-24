@@ -50,4 +50,4 @@ Try it yourself first, then check [`solutions/exercise_1.go`](./solutions/exerci
 2. **Is it safe to return a pointer to a local variable in Go?** — Yes — Go's compiler performs escape analysis and allocates the variable on the heap instead of the stack if it needs to outlive the function call, unlike C/C++ where this would be a dangling-pointer bug.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)

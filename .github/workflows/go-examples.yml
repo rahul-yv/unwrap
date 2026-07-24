@@ -17,17 +17,25 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "1.23"
-      - name: go vet every example and solution
+      - name: go vet every standalone example and solution
         run: |
           set -e
-          find languages/go \( -name "example.go" -o -path "*/solutions/exercise_*.go" \) | while read -r f; do
+          find "$PWD/languages/go" \( -name "example.go" -o -path "*/solutions/exercise_*.go" \) -not -name "*_test.go" | while read -r f; do
             echo "Vetting $f"
-            go vet "$f"
+            (cd "$(dirname "$f")" && go vet "$(basename "$f")")
           done
-      - name: Run every example and solution
+      - name: Run every standalone example and solution
         run: |
           set -e
-          find languages/go \( -name "example.go" -o -path "*/solutions/exercise_*.go" \) | while read -r f; do
+          find "$PWD/languages/go" \( -name "example.go" -o -path "*/solutions/exercise_*.go" \) -not -name "*_test.go" | while read -r f; do
             echo "Running $f"
-            go run "$f"
+            (cd "$(dirname "$f")" && go run "$(basename "$f")")
+          done
+      - name: go test every module (topics with a go.mod)
+        run: |
+          set -e
+          find "$PWD/languages/go" -name "go.mod" | while read -r modfile; do
+            dir="$(dirname "$modfile")"
+            echo "Testing module in $dir"
+            (cd "$dir" && go vet ./... && go test ./...)
           done
