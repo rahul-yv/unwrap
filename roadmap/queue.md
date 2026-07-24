@@ -8,10 +8,11 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] JavaScript topics 01-18 — JavaScript track complete
 - [x] TypeScript topics 01-06 (variables → functions)
 - [ ] TypeScript topics 07-18 (collections → interview)
+- [x] Go topics 01-06 (variables → functions)
 
 ## Next
 
-- [ ] Go topics 01-18
+- [ ] Go topics 07-18 (collections → interview)
 - [ ] Java topics 01-18
 - [ ] Rust topics 01-18
 

@@ -1,0 +1,33 @@
+name: go-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/go/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/go/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+      - name: go vet every example and solution
+        run: |
+          set -e
+          find languages/go \( -name "example.go" -o -path "*/solutions/exercise_*.go" \) | while read -r f; do
+            echo "Vetting $f"
+            go vet "$f"
+          done
+      - name: Run every example and solution
+        run: |
+          set -e
+          find languages/go \( -name "example.go" -o -path "*/solutions/exercise_*.go" \) | while read -r f; do
+            echo "Running $f"
+            go run "$f"
+          done
