@@ -31,7 +31,7 @@ target/
 
 # Rust
 /target/
-Cargo.lock
+# Cargo.lock is committed for the topics with a Cargo.toml (reproducible builds)
 
 # C / C++
 *.o

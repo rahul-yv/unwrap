@@ -1,0 +1,16 @@
+[package]
+name = "unwrap_rust_databases"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "example"
+path = "example.rs"
+
+[[bin]]
+name = "exercise_1"
+path = "solutions/exercise_1.rs"
+
+[dependencies]
+rusqlite = { version = "0.31", features = ["bundled"] }

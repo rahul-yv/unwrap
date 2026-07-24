@@ -19,7 +19,10 @@ jobs:
         run: |
           set -e
           out=$(mktemp -d)
-          find languages/rust \( -name "example.rs" -o -path "*/solutions/exercise_*.rs" \) -not -path "*/12_testing/*" | while read -r f; do
+          find languages/rust \( -name "example.rs" -o -path "*/solutions/exercise_*.rs" \) \
+            -not -path "*/12_testing/*" \
+            -not -path "*/14_databases/*" \
+            -not -path "*/16_security/*" | while read -r f; do
             echo "Running $f"
             bin="$out/$(basename "$f" .rs)-$RANDOM"
             rustc -D warnings "$f" -o "$bin"
@@ -34,4 +37,13 @@ jobs:
             bin="$out/$(basename "$f" .rs)-$RANDOM"
             rustc --test -D warnings "$f" -o "$bin"
             "$bin"
+          done
+      - name: Build and run the Cargo-based topics (databases, security)
+        run: |
+          set -e
+          for dir in languages/rust/14_databases languages/rust/16_security; do
+            echo "Building $dir"
+            (cd "$dir" && cargo build --release)
+            "$dir/target/release/example"
+            "$dir/target/release/exercise_1"
           done
