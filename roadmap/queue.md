@@ -10,7 +10,8 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] Go topics 01-18 — Go track complete
 - [x] Java topics 01-18 — Java track complete
 - [x] Rust topics 01-06 (variables → functions)
-- [ ] Rust topics 07-18 (collections → interview)
+- [x] Rust topics 07-12 (collections → testing)
+- [ ] Rust topics 13-18 (networking → interview)
 
 ## Next
 
