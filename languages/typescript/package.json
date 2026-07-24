@@ -1,0 +1,8 @@
+{
+  "name": "unwrap-typescript-lessons",
+  "private": true,
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "22.15.0"
+  }
+}

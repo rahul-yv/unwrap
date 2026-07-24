@@ -6,7 +6,8 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 - [x] Python topics 01-18 — Python track complete
 - [x] JavaScript topics 01-18 — JavaScript track complete
-- [ ] TypeScript topics 01-18
+- [x] TypeScript topics 01-06 (variables → functions)
+- [ ] TypeScript topics 07-18 (collections → interview)
 
 ## Next
 
