@@ -1,0 +1,55 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Node / JS / TS
+node_modules/
+dist/
+build/
+*.log
+
+# Java / Kotlin
+*.class
+target/
+.gradle/
+
+# Go
+*.exe
+*.test
+
+# Rust
+/target/
+Cargo.lock
+
+# C / C++
+*.o
+*.out
+*.obj
+
+# Swift
+.build/
+*.xcodeproj
+
+# C#
+bin/
+obj/
+
+# Ruby
+*.gem
+.bundle/
+
+# Dart
+.dart_tool/
+.packages
