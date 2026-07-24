@@ -46,4 +46,4 @@ Try it yourself first, then check [`solutions/exercise_1.py`](./solutions/exerci
 3. **What is a "flaky" test, and what commonly causes it?** — A test that sometimes passes and sometimes fails with no code change; common causes are relying on real time/dates, network calls, unseeded randomness, or shared state between tests.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)

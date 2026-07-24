@@ -4,15 +4,15 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 ## Now
 
-- [x] Python topics 01-06 (variables → functions)
-- [x] Python topics 07-12 (collections → testing)
-- [ ] Python topics 13-18 (networking → interview)
+- [x] Python topics 01-18 — Python track complete
+- [ ] JavaScript topics 01-18
+- [ ] Go topics 01-18
 
 ## Next
 
-- [ ] JavaScript topics 01-18
-- [ ] Go topics 01-18
 - [ ] TypeScript topics 01-18
+- [ ] Java topics 01-18
+- [ ] Rust topics 01-18
 
 ## Later
 
