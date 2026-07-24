@@ -4,7 +4,7 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 ## Now
 
-- [ ] Python topics 01-06 (variables → functions)
+- [x] Python topics 01-06 (variables → functions)
 - [ ] Python topics 07-12 (collections → testing)
 - [ ] Python topics 13-18 (networking → interview)
 
