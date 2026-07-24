@@ -31,7 +31,7 @@ Every language folder under `languages/` follows the same 18-topic sequence, so 
 | JavaScript | done |
 | TypeScript | not started |
 | Java | not started |
-| Go | not started |
+| Go | in progress |
 | Rust | not started |
 | C | not started |
 | C++ | not started |
