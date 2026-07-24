@@ -18,10 +18,33 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "21"
-      - name: Run every example and solution (single-file source launcher)
+      - name: Run every standalone example and solution (single-file source launcher)
         run: |
           set -e
-          find languages/java \( -name "Example.java" -o -path "*/solutions/Exercise*.java" \) | while read -r f; do
+          find languages/java \( -name "Example.java" -o -path "*/solutions/Exercise*.java" \) \
+            -not -path "*/11_modules_packages/*" \
+            -not -path "*/12_testing/*" | while read -r f; do
             echo "Running $f"
             java "$f"
           done
+      - name: Run modules_packages (needs a compiled classpath, not the source launcher)
+        run: |
+          set -e
+          dir=languages/java/11_modules_packages
+          out=$(mktemp -d)
+          javac -d "$out" "$dir/mypackage/Helpers.java"
+          java -cp "$out" "$dir/Example.java"
+          java -cp "$out" "$dir/solutions/Exercise1.java"
+      - name: Run the testing topic with JUnit
+        run: |
+          set -e
+          curl -sL -o /tmp/junit-console.jar "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.3/junit-platform-console-standalone-1.11.3.jar"
+
+          dir=languages/java/12_testing
+          out1=$(mktemp -d)
+          javac -cp /tmp/junit-console.jar -d "$out1" "$dir/Example.java" "$dir/ExampleTest.java"
+          java -jar /tmp/junit-console.jar execute -cp "$out1" --select-class ExampleTest --fail-if-no-tests
+
+          out2=$(mktemp -d)
+          javac -cp /tmp/junit-console.jar -d "$out2" "$dir/solutions/Exercise1Test.java"
+          java -jar /tmp/junit-console.jar execute -cp "$out2" --select-class Exercise1Test --fail-if-no-tests
