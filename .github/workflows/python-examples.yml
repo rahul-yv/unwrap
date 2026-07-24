@@ -1,0 +1,33 @@
+name: python-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/python/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/python/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run every example and solution
+        run: |
+          set -e
+          find languages/python -name "example.py" -o -path "*/solutions/exercise_*.py" | while read -r f; do
+            echo "Running $f"
+            python3 "$f"
+          done
+      - name: Run unittest-style test files
+        run: |
+          set -e
+          find languages/python -name "test_*.py" | while read -r f; do
+            echo "Running $f"
+            (cd "$(dirname "$f")" && python3 -m unittest "$(basename "$f")")
+          done
