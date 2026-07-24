@@ -48,4 +48,4 @@ Try it yourself first, then check [`solutions/exercise_1.js`](./solutions/exerci
 3. **What makes a test "flaky"?** — It passes/fails inconsistently with no code change — usually caused by relying on real timers, network calls, unseeded randomness, or shared mutable state between tests.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)

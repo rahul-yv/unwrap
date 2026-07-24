@@ -28,7 +28,7 @@ Every language folder under `languages/` follows the same 18-topic sequence, so 
 | Language | Status |
 |----------|--------|
 | Python | done |
-| JavaScript | not started |
+| JavaScript | done |
 | TypeScript | not started |
 | Java | not started |
 | Go | not started |
