@@ -45,4 +45,4 @@ Try it yourself first, then check [`solutions/exercise_1.ts`](./solutions/exerci
 2. **How do function overloads differ from a single function with a union parameter type?** — Overloads let the return type depend on which specific input shape was passed (e.g. `string` in → `number` out via one overload, `Buffer` in → `string` out via another), which a single union-typed signature can't express as precisely.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
