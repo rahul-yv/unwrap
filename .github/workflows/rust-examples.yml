@@ -19,9 +19,19 @@ jobs:
         run: |
           set -e
           out=$(mktemp -d)
-          find languages/rust \( -name "example.rs" -o -path "*/solutions/exercise_*.rs" \) | while read -r f; do
+          find languages/rust \( -name "example.rs" -o -path "*/solutions/exercise_*.rs" \) -not -path "*/12_testing/*" | while read -r f; do
             echo "Running $f"
             bin="$out/$(basename "$f" .rs)-$RANDOM"
             rustc -D warnings "$f" -o "$bin"
+            "$bin"
+          done
+      - name: Compile and run the testing topic (rustc --test)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          find languages/rust/12_testing \( -name "example.rs" -o -path "*/solutions/exercise_*.rs" \) | while read -r f; do
+            echo "Running $f"
+            bin="$out/$(basename "$f" .rs)-$RANDOM"
+            rustc --test -D warnings "$f" -o "$bin"
             "$bin"
           done

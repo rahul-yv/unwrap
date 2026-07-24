@@ -46,4 +46,4 @@ Try it yourself first, then check [`solutions/exercise_1.rs`](./solutions/exerci
 2. **What's the difference between `Fn`, `FnMut`, and `FnOnce`?** — They describe how a closure interacts with what it captures: `Fn` only borrows (callable repeatedly, shared access), `FnMut` mutably borrows (callable repeatedly, exclusive access needed), `FnOnce` consumes captured values by moving them out (callable only once). Every closure implements at least `FnOnce`; whether it also implements `FnMut`/`Fn` depends on what its body actually does.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
