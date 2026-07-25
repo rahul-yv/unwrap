@@ -1,0 +1,31 @@
+class TestRunner
+  def initialize
+    @run = 0
+    @failed = 0
+  end
+
+  def check(condition, name)
+    @run += 1
+    if condition
+      puts "PASS: #{name}"
+    else
+      @failed += 1
+      puts "FAIL: #{name}"
+    end
+  end
+
+  def summary
+    puts "#{@run - @failed}/#{@run} passed"
+    @failed.zero? ? 0 : 1
+  end
+end
+
+def add(a, b) = a + b
+
+t = TestRunner.new
+t.check(add(0, 0) == 0, "adds zeros")
+t.check(add(-1, 1) == 0, "adds opposite numbers")
+exit_code = t.summary
+raise "fail" unless exit_code == 0
+
+puts "ok"
