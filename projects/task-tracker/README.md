@@ -24,6 +24,7 @@ Persistence: tasks are stored as JSON in a file (one array of task objects), loa
 - [Python](./python/)
 - [Go](./go/)
 - [TypeScript](./typescript/)
+- [Rust](./rust/)
 
 ## Topics this combines
 
