@@ -1,0 +1,26 @@
+name: php-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/php/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/php/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+      - name: Run every example and solution
+        run: |
+          set -e
+          find languages/php \( -name "example.php" -o -path "*/solutions/exercise_*.php" \) | while read -r f; do
+            echo "Running $f"
+            php "$f"
+          done
