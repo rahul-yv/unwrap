@@ -30,15 +30,15 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 - [x] Ruby topics 01-06 (variables → functions)
 - [x] Ruby topics 07-12 (collections → testing)
+- [x] Ruby topics 13-18 (networking → interview) — Ruby track complete
 
 ## Next
 
-- [ ] Ruby topics 13-18
 - [ ] Dart topics 01-18
 
 ## Later
 
-- Ruby, Dart — same 18-topic sequence
+- Dart — same 18-topic sequence
 - Cross-language comparison notes under `projects/comparisons/` once 3+ languages share a topic
 - Mini projects that combine multiple topics per language
 
