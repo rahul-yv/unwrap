@@ -38,10 +38,16 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 All 14 languages now complete (18/18 topics each).
 
+- [x] Cross-language comparison notes under `projects/comparisons/` — variables, error_handling, concurrency, collections, oop, security, testing
+- [x] Task Tracker mini project (multi-topic: OOP, collections, files, error handling) — Python, Go, TypeScript, Rust, Java
+
 ## Next
 
-- [ ] Cross-language comparison notes under `projects/comparisons/`
-- [ ] Mini projects that combine multiple topics per language
+Nothing queued. Possible future additions:
+
+- More comparison topics (e.g. networking, modules/packages, functions/closures)
+- Task Tracker in additional languages
+- A second combined mini project
 
 ## Later
 
