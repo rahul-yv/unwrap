@@ -51,4 +51,4 @@ Try it yourself first, then check [`solutions/exercise_1.swift`](./solutions/exe
 2. **What does it mean for a closure to "capture" a variable, and what's a practical use?** — The closure keeps a live reference to the variable from its enclosing scope, so it can read (and, if it's a `var`, mutate) that variable even after the enclosing function has returned — the captured storage stays alive as long as something references the closure. A counter closure (`makeCounter`) is the classic example: the returned closure carries its own private mutable state via the captured variable.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
