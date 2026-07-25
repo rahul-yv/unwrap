@@ -24,13 +24,17 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] Swift topics 07-12 (collections → testing)
 - [x] Swift topics 13-18 (networking → interview) — Swift track complete
 
+- [x] PHP topics 01-06 (variables → functions)
+
 ## Next
 
-- [ ] PHP topics 01-18
+- [ ] PHP topics 07-18
+- [ ] Ruby topics 01-18
+- [ ] Dart topics 01-18
 
 ## Later
 
-- Kotlin, Swift, PHP, Ruby, Dart — same 18-topic sequence
+- Ruby, Dart — same 18-topic sequence
 - Cross-language comparison notes under `projects/comparisons/` once 3+ languages share a topic
 - Mini projects that combine multiple topics per language
 

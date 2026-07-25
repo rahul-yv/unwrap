@@ -223,12 +223,12 @@
       "18_interview": "done"
     },
     "php": {
-      "01_variables": "not_started",
-      "02_datatypes": "not_started",
-      "03_operators": "not_started",
-      "04_conditions": "not_started",
-      "05_loops": "not_started",
-      "06_functions": "not_started",
+      "01_variables": "done",
+      "02_datatypes": "done",
+      "03_operators": "done",
+      "04_conditions": "done",
+      "05_loops": "done",
+      "06_functions": "done",
       "07_collections": "not_started",
       "08_oop": "not_started",
       "09_errors": "not_started",
