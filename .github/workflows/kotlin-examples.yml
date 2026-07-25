@@ -29,7 +29,7 @@ jobs:
           set -e
           out=$(mktemp -d)
           find languages/kotlin \( -name "example.kt" -o -path "*/solutions/exercise_*.kt" \) \
-            -not -path "*/11_modules_packages/*" | while read -r f; do
+            -not -path "*/11_modules_packages/*" -not -path "*/14_databases/*" | while read -r f; do
             echo "Running $f"
             jar="$out/$(basename "$f" .kt)-$RANDOM.jar"
             kotlinc "$f" -include-runtime -d "$jar"
@@ -44,3 +44,14 @@ jobs:
           java -jar "$out/example.jar"
           kotlinc "$dir/solutions/exercise_1.kt" "$dir/mypackage/Helpers.kt" -include-runtime -d "$out/exercise_1.jar"
           java -jar "$out/exercise_1.jar"
+      - name: Compile and run databases (JDBC + sqlite-jdbc)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          jdbc="$out/sqlite-jdbc.jar"
+          curl -sL -o "$jdbc" "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.47.1.0/sqlite-jdbc-3.47.1.0.jar"
+          dir=languages/kotlin/14_databases
+          kotlinc "$dir/example.kt" -include-runtime -cp "$jdbc" -d "$out/example.jar"
+          java -cp "$out/example.jar:$jdbc" ExampleKt
+          kotlinc "$dir/solutions/exercise_1.kt" -include-runtime -cp "$jdbc" -d "$out/exercise_1.jar"
+          java -cp "$out/exercise_1.jar:$jdbc" Exercise_1Kt
