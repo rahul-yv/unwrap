@@ -1,0 +1,59 @@
+name: task-tracker
+
+on:
+  pull_request:
+    paths:
+      - "projects/task-tracker/**"
+  push:
+    branches: [main]
+    paths:
+      - "projects/task-tracker/**"
+
+jobs:
+  run-implementations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+      - name: Run every implementation that exists
+        run: |
+          set -e
+          cd projects/task-tracker
+
+          if [ -f python/task_tracker.py ]; then
+            echo "Running python"
+            python3 python/task_tracker.py
+          fi
+
+          if [ -f go/task_tracker.go ]; then
+            echo "Running go"
+            (cd go && go run .)
+          fi
+
+          if [ -f typescript/task_tracker.ts ]; then
+            echo "Running typescript"
+            (cd typescript && npm install --no-audit --no-fund && npx tsx task_tracker.ts)
+          fi
+
+          if [ -f rust/src/main.rs ]; then
+            echo "Running rust"
+            (cd rust && cargo run --quiet)
+          fi
+
+          if [ -f java/TaskTracker.java ]; then
+            echo "Running java"
+            (cd java && java TaskTracker.java)
+          fi
