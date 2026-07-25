@@ -1,0 +1,29 @@
+name: csharp-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/csharp/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/csharp/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_NOLOGO: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - name: Run every example and solution (.NET single-file apps)
+        run: |
+          set -e
+          find languages/csharp \( -name "example.cs" -o -path "*/solutions/exercise_*.cs" \) | while read -r f; do
+            echo "Running $f"
+            dotnet run "$f"
+          done
