@@ -21,7 +21,7 @@ jobs:
         run: |
           set -e
           find languages/dart \( -name "example.dart" -o -path "*/solutions/exercise_*.dart" \) \
-            -not -path "*/14_databases/*" | while read -r f; do
+            -not -path "*/14_databases/*" -not -path "*/16_security/*" | while read -r f; do
             echo "Running $f"
             dart run --enable-asserts "$f"
           done
@@ -29,6 +29,13 @@ jobs:
         run: |
           set -e
           cd languages/dart/14_databases
+          dart pub get
+          dart run --enable-asserts example.dart
+          dart run --enable-asserts solutions/exercise_1.dart
+      - name: Run security (crypto pub package)
+        run: |
+          set -e
+          cd languages/dart/16_security
           dart pub get
           dart run --enable-asserts example.dart
           dart run --enable-asserts solutions/exercise_1.dart

@@ -1,0 +1,7 @@
+name: unwrap_dart_security
+description: Dart security basics topic — PBKDF2 example and exercise.
+publish_to: "none"
+environment:
+  sdk: ^3.5.0
+dependencies:
+  crypto: ^3.0.3
