@@ -1,0 +1,9 @@
+{
+  "name": "unwrap-task-tracker",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
