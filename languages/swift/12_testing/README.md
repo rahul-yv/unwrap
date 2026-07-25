@@ -54,4 +54,4 @@ Try it yourself first, then check [`solutions/exercise_1.swift`](./solutions/exe
 2. **What do dedicated frameworks like XCTest or Swift Testing add over a hand-rolled harness?** — Test discovery via naming conventions or macros/attributes (no manual list of checks to run), rich assertion functions with descriptive failure messages (showing actual vs expected, source location), fixtures and setup/teardown, parameterized tests, and structured output formats for CI/Xcode integration — conveniences a minimal harness omits but that matter at scale.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
