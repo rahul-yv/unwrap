@@ -56,4 +56,4 @@ Try it yourself first, then check [`solutions/exercise_1.rb`](./solutions/exerci
 2. **What do RSpec/Minitest add over a hand-rolled harness?** — Test discovery via file naming/directory conventions (no manual list of checks to run), rich matcher/assertion DSLs with descriptive failure messages, fixtures and setup/teardown hooks, shared examples for reducing duplication across similar tests, and structured output formats for CI integration — conveniences a minimal harness omits but that matter at scale.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
