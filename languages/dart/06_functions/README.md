@@ -43,4 +43,4 @@ Try it yourself first, then check [`solutions/exercise_1.dart`](./solutions/exer
 2. **What does it mean for a closure to "capture" a variable, and how does `makeCounter` use it?** — The closure keeps a live reference to the variable from its enclosing scope (not a copy of its value at creation time), so it can read and mutate that variable across multiple calls, even after the enclosing function has returned. `makeCounter`'s returned closure captures `count`; each invocation increments and returns that same captured variable, which is how the counter accumulates state between calls.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
