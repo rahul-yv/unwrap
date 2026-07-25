@@ -40,7 +40,7 @@ Every language folder under `languages/` follows the same 18-topic sequence, so 
 | Swift | done |
 | PHP | done |
 | Ruby | done |
-| Dart | in progress |
+| Dart | done |
 
 Status is tracked at topic granularity in `progress.json` — this table is a coarse summary, updated when a language's overall state changes meaningfully.
 
