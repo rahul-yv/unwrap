@@ -26,10 +26,10 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 - [x] PHP topics 01-06 (variables → functions)
 - [x] PHP topics 07-12 (collections → testing)
+- [x] PHP topics 13-18 (networking → interview) — PHP track complete
 
 ## Next
 
-- [ ] PHP topics 13-18
 - [ ] Ruby topics 01-18
 - [ ] Dart topics 01-18
 
