@@ -43,4 +43,4 @@ Try it yourself first, then check [`solutions/exercise_1.cpp`](./solutions/exerc
 2. **When should a function parameter be `const T&` instead of `T`?** — When the function only reads the argument and the type is non-trivial to copy (strings, vectors, large structs) — `const T&` passes a reference (no copy, and `const` promises not to modify it), while `T` by value would copy. For small, cheap types (`int`, `double`), by value is fine and sometimes preferred.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
