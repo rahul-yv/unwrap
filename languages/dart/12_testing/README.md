@@ -58,4 +58,4 @@ Try it yourself first, then check [`solutions/exercise_1.dart`](./solutions/exer
 2. **What does the `test` package add over a hand-rolled harness?** — Test discovery via file naming conventions (`_test.dart` suffix, no manual list of checks to run), rich `expect()` matchers with descriptive failure messages (showing actual vs expected), `setUp`/`tearDown` fixtures, grouping and filtering tests, and structured output formats for CI integration — conveniences a minimal harness omits but that matter at scale.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
