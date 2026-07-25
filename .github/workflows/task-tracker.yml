@@ -28,6 +28,12 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "21"
+      - name: Install Kotlin compiler
+        run: |
+          curl -s https://get.sdkman.io | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk install kotlin < /dev/null
+          echo "$HOME/.sdkman/candidates/kotlin/current/bin" >> "$GITHUB_PATH"
       - name: Run every implementation that exists
         run: |
           set -e
@@ -56,4 +62,9 @@ jobs:
           if [ -f java/TaskTracker.java ]; then
             echo "Running java"
             (cd java && java TaskTracker.java)
+          fi
+
+          if [ -f kotlin/task_tracker.kt ]; then
+            echo "Running kotlin"
+            (cd kotlin && kotlinc task_tracker.kt -include-runtime -d task_tracker.jar && java -jar task_tracker.jar)
           fi

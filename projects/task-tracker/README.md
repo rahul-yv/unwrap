@@ -26,6 +26,7 @@ Persistence: tasks are stored as JSON in a file (one array of task objects), loa
 - [TypeScript](./typescript/)
 - [Rust](./rust/)
 - [Java](./java/)
+- [Kotlin](./kotlin/)
 
 ## Topics this combines
 
