@@ -42,4 +42,4 @@ Try it yourself first, then check [`solutions/exercise_1.kt`](./solutions/exerci
 2. **What does it mean for a lambda to "close over" a variable, and what's a practical use?** — The lambda captures a reference to the variable from its enclosing scope, keeping it alive and allowing the lambda to read (and, since it's a reference, mutate) it across calls even after the enclosing function has returned. A counter closure (`makeCounter`) is the classic example: the returned lambda keeps its own private mutable state via the captured variable.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
