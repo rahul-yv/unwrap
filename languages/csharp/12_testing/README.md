@@ -41,4 +41,4 @@ Try it yourself first, then check [`solutions/exercise_1.cs`](./solutions/exerci
 2. **Why must a test process return a nonzero exit code on failure?** — CI pipelines and `dotnet test` determine success by the process exit code; if the test binary exits `0` regardless of assertion results, failing tests are reported as passing and broken code slips through automation undetected.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
