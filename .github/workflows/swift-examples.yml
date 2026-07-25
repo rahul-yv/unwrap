@@ -20,7 +20,17 @@ jobs:
       - name: Compile and run every example and solution
         run: |
           set -e
-          find languages/swift \( -name "example.swift" -o -path "*/solutions/exercise_*.swift" \) | while read -r f; do
+          find languages/swift \( -name "example.swift" -o -path "*/solutions/exercise_*.swift" \) \
+            -not -path "*/11_modules_packages/*" | while read -r f; do
             echo "Running $f"
             swift "$f"
           done
+      - name: Compile and run modules_packages (multi-file)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          dir=languages/swift/11_modules_packages
+          swiftc "$dir/main.swift" "$dir/mypackage/Helpers.swift" -o "$out/example"
+          "$out/example"
+          swiftc "$dir/solutions/main.swift" "$dir/mypackage/Helpers.swift" -o "$out/exercise_1"
+          "$out/exercise_1"
