@@ -47,4 +47,4 @@ Try it yourself first, then check [`solutions/exercise_1.rb`](./solutions/exerci
 2. **What does it mean for `make_counter` to return a closure, and how does the counter persist across calls?** — The returned lambda captures (closes over) the local variable `count` from `make_counter`'s scope; even after `make_counter` itself returns, that captured variable stays alive as long as the lambda referencing it exists. Each call to the lambda reads and mutates that same captured `count`, which is how the counter accumulates state between calls without any external storage.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
