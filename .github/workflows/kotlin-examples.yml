@@ -28,9 +28,19 @@ jobs:
         run: |
           set -e
           out=$(mktemp -d)
-          find languages/kotlin \( -name "example.kt" -o -path "*/solutions/exercise_*.kt" \) | while read -r f; do
+          find languages/kotlin \( -name "example.kt" -o -path "*/solutions/exercise_*.kt" \) \
+            -not -path "*/11_modules_packages/*" | while read -r f; do
             echo "Running $f"
             jar="$out/$(basename "$f" .kt)-$RANDOM.jar"
             kotlinc "$f" -include-runtime -d "$jar"
             java -jar "$jar"
           done
+      - name: Compile and run modules_packages (multi-file)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          dir=languages/kotlin/11_modules_packages
+          kotlinc "$dir/example.kt" "$dir/mypackage/Helpers.kt" -include-runtime -d "$out/example.jar"
+          java -jar "$out/example.jar"
+          kotlinc "$dir/solutions/exercise_1.kt" "$dir/mypackage/Helpers.kt" -include-runtime -d "$out/exercise_1.jar"
+          java -jar "$out/exercise_1.jar"
