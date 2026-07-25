@@ -7,14 +7,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class TaskNotFoundException extends RuntimeException {
-    TaskNotFoundException(int id) {
-        super("no task with id " + id);
-    }
-}
-
-record Task(int id, String description, boolean done) {}
-
 class TaskTracker {
     private static final Pattern TASK_PATTERN = Pattern.compile(
         "\\{\"id\":(\\d+),\"description\":\"([^\"]*)\",\"done\":(true|false)\\}"
@@ -118,3 +110,11 @@ class TaskTracker {
         System.out.println("ok");
     }
 }
+
+class TaskNotFoundException extends RuntimeException {
+    TaskNotFoundException(int id) {
+        super("no task with id " + id);
+    }
+}
+
+record Task(int id, String description, boolean done) {}
