@@ -28,9 +28,11 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] PHP topics 07-12 (collections → testing)
 - [x] PHP topics 13-18 (networking → interview) — PHP track complete
 
+- [x] Ruby topics 01-06 (variables → functions)
+
 ## Next
 
-- [ ] Ruby topics 01-18
+- [ ] Ruby topics 07-18
 - [ ] Dart topics 01-18
 
 ## Later
