@@ -34,7 +34,7 @@ Every language folder under `languages/` follows the same 18-topic sequence, so 
 | Go | done |
 | Rust | done |
 | C | done |
-| C++ | not started |
+| C++ | in progress |
 | C# | not started |
 | Kotlin | not started |
 | Swift | not started |

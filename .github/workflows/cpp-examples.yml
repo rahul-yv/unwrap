@@ -1,0 +1,26 @@
+name: cpp-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/cpp/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/cpp/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and run every example and solution
+        run: |
+          set -e
+          out=$(mktemp -d)
+          find languages/cpp \( -name "example.cpp" -o -path "*/solutions/exercise_*.cpp" \) | while read -r f; do
+            echo "Running $f"
+            bin="$out/$(basename "$f" .cpp)-$RANDOM"
+            g++ -std=c++17 -Wall -Wextra -Werror "$f" -o "$bin"
+            "$bin"
+          done
