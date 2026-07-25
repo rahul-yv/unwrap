@@ -1,0 +1,26 @@
+name: ruby-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/ruby/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/ruby/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+      - name: Run every example and solution
+        run: |
+          set -e
+          find languages/ruby \( -name "example.rb" -o -path "*/solutions/exercise_*.rb" \) | while read -r f; do
+            echo "Running $f"
+            ruby "$f"
+          done
