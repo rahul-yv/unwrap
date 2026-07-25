@@ -17,6 +17,8 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
+      - name: Install the sqlite3 gem (for the databases topic)
+        run: gem install sqlite3
       - name: Run every example and solution
         run: |
           set -e
