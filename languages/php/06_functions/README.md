@@ -50,4 +50,4 @@ Try it yourself first, then check [`solutions/exercise_1.php`](./solutions/exerc
 2. **When would you choose a regular closure over an arrow function (`fn`)?** — Arrow functions are limited to a single expression and can only capture by value (automatically, without an explicit `use`) — convenient for short, pure transformations passed to something like `array_map`. A regular closure is needed for a multi-statement body, or when the closure must capture by reference to mutate outer state or retain state across repeated calls (a counter, an accumulator).
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
