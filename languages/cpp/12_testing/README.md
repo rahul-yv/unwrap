@@ -59,4 +59,4 @@ Try it yourself first, then check [`solutions/exercise_1.cpp`](./solutions/exerc
 2. **What do dedicated frameworks like GoogleTest or Catch2 add over a hand-rolled harness?** — Test discovery/registration (no manual list), rich assertion macros with descriptive failure messages (showing actual vs expected), fixtures and setup/teardown, parameterized tests, test filtering, and structured output formats for CI integration — conveniences a minimal harness omits but that matter at scale.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
