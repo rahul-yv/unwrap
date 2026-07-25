@@ -12,16 +12,18 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] Rust topics 01-18 — Rust track complete
 - [x] C topics 01-18 — C track complete
 - [x] C++ topics 01-18 — C++ track complete
+- [x] C# topics 01-06 (variables → functions)
+- [ ] C# topics 07-18 (collections → interview)
 
 ## Next
 
-- [ ] C# topics 01-18
 - [ ] Kotlin topics 01-18
 - [ ] Swift topics 01-18
+- [ ] PHP topics 01-18
 
 ## Later
 
-- C#, Kotlin, Swift, PHP, Ruby, Dart — same 18-topic sequence
+- Kotlin, Swift, PHP, Ruby, Dart — same 18-topic sequence
 - Cross-language comparison notes under `projects/comparisons/` once 3+ languages share a topic
 - Mini projects that combine multiple topics per language
 
