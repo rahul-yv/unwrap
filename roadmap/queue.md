@@ -11,7 +11,8 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] Java topics 01-18 — Java track complete
 - [x] Rust topics 01-18 — Rust track complete
 - [x] C topics 01-06 (variables → functions)
-- [ ] C topics 07-18 (collections → interview)
+- [x] C topics 07-12 (collections → testing)
+- [ ] C topics 13-18 (networking → interview)
 
 ## Next
 
