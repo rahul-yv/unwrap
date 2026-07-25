@@ -22,6 +22,7 @@ Persistence: tasks are stored as JSON in a file (one array of task objects), loa
 ## Languages implemented
 
 - [Python](./python/)
+- [Go](./go/)
 
 ## Topics this combines
 
