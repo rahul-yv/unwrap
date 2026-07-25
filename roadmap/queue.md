@@ -16,9 +16,11 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] C# topics 07-12 (collections → testing)
 - [x] C# topics 13-18 (networking → interview) — C# track complete
 
+- [x] Kotlin topics 01-06 (variables → functions)
+
 ## Next
 
-- [ ] Kotlin topics 01-18
+- [ ] Kotlin topics 07-18
 - [ ] Swift topics 01-18
 - [ ] PHP topics 01-18
 
