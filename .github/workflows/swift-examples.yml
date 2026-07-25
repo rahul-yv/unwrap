@@ -1,0 +1,26 @@
+name: swift-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/swift/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/swift/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.0"
+      - name: Compile and run every example and solution
+        run: |
+          set -e
+          find languages/swift \( -name "example.swift" -o -path "*/solutions/exercise_*.swift" \) | while read -r f; do
+            echo "Running $f"
+            swift "$f"
+          done
