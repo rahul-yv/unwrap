@@ -16,7 +16,7 @@ func greet(_ name: String) -> String {
 print(greet("Ada"))
 ```
 
-Unlike every other topic so far, this one compiles two files together: `swiftc main.swift mypackage/Helpers.swift -o out && ./out`. Note the entry point is named `main.swift`, not `example.swift` — when compiling multiple files, only a file literally named `main.swift` may contain top-level executable statements (see [`solutions/exercise_1.swift`](./solutions/exercise_1.swift) — actually `solutions/main.swift`, same constraint). See [`main.swift`](./main.swift) and [`mypackage/`](./mypackage/) for the full runnable files.
+Unlike every other topic so far, this one compiles two files together: `swiftc main.swift mypackage/Helpers.swift -o out && ./out`. Note the entry point is named `main.swift`, not `example.swift` — when compiling multiple files, only a file literally named `main.swift` may contain top-level executable statements, which is why the solution is `solutions/main.swift` too. See [`main.swift`](./main.swift) and [`mypackage/`](./mypackage/) for the full runnable files.
 
 ## Common mistakes
 
