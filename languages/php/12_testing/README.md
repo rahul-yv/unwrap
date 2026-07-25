@@ -58,4 +58,4 @@ Try it yourself first, then check [`solutions/exercise_1.php`](./solutions/exerc
 2. **What does PHPUnit add over a hand-rolled harness?** — Test discovery via naming conventions/annotations (no manual list of checks to run), rich assertion methods with descriptive failure messages (showing actual vs expected), fixtures and setup/teardown, data providers for parameterized tests, mocking support, and structured output formats for CI integration — conveniences a minimal harness omits but that matter at scale.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
