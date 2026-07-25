@@ -34,15 +34,18 @@ Working order. Update this as items complete or priorities shift — it's the "w
 
 - [x] Dart topics 01-06 (variables → functions)
 - [x] Dart topics 07-12 (collections → testing)
+- [x] Dart topics 13-18 (networking → interview) — Dart track complete
+
+All 14 languages now complete (18/18 topics each).
 
 ## Next
 
-- [ ] Dart topics 13-18
+- [ ] Cross-language comparison notes under `projects/comparisons/`
+- [ ] Mini projects that combine multiple topics per language
 
 ## Later
 
-- Cross-language comparison notes under `projects/comparisons/` once 3+ languages share a topic
-- Mini projects that combine multiple topics per language
+- Revisit and refine existing content as needed
 
 ## Notes
 
