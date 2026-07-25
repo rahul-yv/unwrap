@@ -45,4 +45,4 @@ Try it yourself first, then check [`solutions/exercise_1.cs`](./solutions/exerci
 2. **What makes LINQ's query operators "deferred," and why does it matter?** — Operators like `Where`/`Select` return a query object that hasn't executed yet; the actual work happens only when you enumerate the result (via `foreach`, `.ToList()`, etc.). This enables composing queries efficiently and short-circuiting, but means enumerating twice re-runs the query, and a query over a mutable source reflects its state at enumeration time — call `.ToList()` to capture a snapshot.
 
 ---
-← [Previous: Loops](../05_loops/README.md) | Next: Collections (coming soon)
+← [Previous: Loops](../05_loops/README.md) | [Next: Collections →](../07_collections/README.md)
