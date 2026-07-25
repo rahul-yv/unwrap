@@ -56,4 +56,4 @@ Try it yourself first, then check [`solutions/exercise_1.kt`](./solutions/exerci
 2. **What do dedicated frameworks like JUnit or Kotest add over a hand-rolled harness?** — Test discovery/registration via annotations (no manual list of checks to run), rich assertion functions with descriptive failure messages (showing actual vs expected), fixtures and setup/teardown, parameterized tests, and structured output formats for CI integration — conveniences a minimal harness omits but that matter at scale.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)
