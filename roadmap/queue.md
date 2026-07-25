@@ -33,10 +33,11 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] Ruby topics 13-18 (networking → interview) — Ruby track complete
 
 - [x] Dart topics 01-06 (variables → functions)
+- [x] Dart topics 07-12 (collections → testing)
 
 ## Next
 
-- [ ] Dart topics 07-18
+- [ ] Dart topics 13-18
 
 ## Later
 
