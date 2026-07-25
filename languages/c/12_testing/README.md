@@ -54,4 +54,4 @@ Try it yourself first, then check [`solutions/exercise_1.c`](./solutions/exercis
 2. **Why is `assert()` alone insufficient as a full test framework?** — It aborts on the first failure, giving no visibility into whether other, unrelated checks would have passed or failed — a real test suite needs to isolate each check and report a complete summary, not stop at the first problem.
 
 ---
-← [Previous: Modules and Packages](../11_modules_packages/README.md) | Next: Networking (coming soon)
+← [Previous: Modules and Packages](../11_modules_packages/README.md) | [Next: Networking →](../13_networking/README.md)

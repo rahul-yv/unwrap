@@ -14,12 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compile and run every single-file example and solution
+      - name: Install dependencies for the library-based topics
+        run: sudo apt-get update && sudo apt-get install -y libsqlite3-dev libssl-dev
+      - name: Compile and run every pure-C single-file example and solution
         run: |
           set -e
           out=$(mktemp -d)
           find languages/c \( -name "example.c" -o -path "*/solutions/exercise_*.c" \) \
-            -not -path "*/11_modules_packages/*" | while read -r f; do
+            -not -path "*/11_modules_packages/*" \
+            -not -path "*/13_networking/*" \
+            -not -path "*/14_databases/*" \
+            -not -path "*/15_concurrency/*" \
+            -not -path "*/16_security/*" | while read -r f; do
             echo "Running $f"
             bin="$out/$(basename "$f" .c)-$RANDOM"
             gcc -std=c17 -Wall -Wextra -Werror "$f" -o "$bin" -lm
@@ -34,3 +40,20 @@ jobs:
           "$out/example"
           gcc -std=c17 -Wall -Wextra -Werror "$dir/solutions/exercise_1.c" "$dir/mypackage.c" -o "$out/exercise_1" -lm
           "$out/exercise_1"
+      - name: Compile and run the library-based topics (POSIX / sqlite / pthread / openssl)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          run_topic() {
+            local dir="$1"; shift
+            for f in "$dir/example.c" "$dir/solutions/exercise_1.c"; do
+              echo "Running $f"
+              bin="$out/$(basename "$(dirname "$(dirname "$f")")")-$(basename "$f" .c)-$RANDOM"
+              gcc -std=gnu17 -Wall -Wextra -Werror "$f" -o "$bin" "$@"
+              "$bin"
+            done
+          }
+          run_topic languages/c/13_networking
+          run_topic languages/c/14_databases -lsqlite3
+          run_topic languages/c/15_concurrency -lpthread
+          run_topic languages/c/16_security -lcrypto
