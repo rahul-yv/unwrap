@@ -7,11 +7,13 @@ On Apple platforms, real-world Swift networking uses `URLSession` (Foundation) f
 ```swift
 #if canImport(Glibc)
 import Glibc
+let streamSocketType = Int32(SOCK_STREAM.rawValue)   // Glibc types SOCK_STREAM as an enum, not Int32
 #else
 import Darwin
+let streamSocketType = SOCK_STREAM
 #endif
 
-let serverFd = socket(AF_INET, SOCK_STREAM, 0)
+let serverFd = socket(AF_INET, streamSocketType, 0)
 
 var addr = sockaddr_in()
 addr.sin_family = sa_family_t(AF_INET)
@@ -40,6 +42,7 @@ See [`example.swift`](./example.swift) for the full runnable file — a loopback
 2. **Assuming one `recv` call returns the whole message.** TCP is a byte stream — a message can arrive split across multiple reads; loop until a complete, self-delimited message has been read.
 3. **Not checking socket call return values.** Like C, these are low-level POSIX calls that return `-1` on error; Swift doesn't add automatic error handling on top of them the way it does for `throws` functions.
 4. **Not closing every socket file descriptor (`close(fd)`) on every exit path**, including error paths — there's no automatic RAII cleanup for raw POSIX handles the way there is for `FileHandle`/`URLSession` on Apple platforms.
+5. **Passing `SOCK_STREAM` directly to `socket()` and assuming it type-checks the same on every platform.** On Darwin it's already `Int32`; on Glibc (Linux) it's typed as an enum (`__socket_type`), so it needs `Int32(SOCK_STREAM.rawValue)` — a `#if canImport(Glibc)` constant at the top of the file is the portable fix, same idea as the `Glibc`/`Darwin` import split itself.
 
 ## Exercise
 

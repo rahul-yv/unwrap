@@ -1,11 +1,13 @@
 #if canImport(Glibc)
 import Glibc
+let streamSocketType = Int32(SOCK_STREAM.rawValue)
 #else
 import Darwin
+let streamSocketType = SOCK_STREAM
 #endif
 
 func makeSocket() -> Int32 {
-    socket(AF_INET, SOCK_STREAM, 0)
+    socket(AF_INET, streamSocketType, 0)
 }
 
 let serverFd = makeSocket()

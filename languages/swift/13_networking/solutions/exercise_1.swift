@@ -1,12 +1,14 @@
 #if canImport(Glibc)
 import Glibc
+let streamSocketType = Int32(SOCK_STREAM.rawValue)
 #else
 import Darwin
+let streamSocketType = SOCK_STREAM
 #endif
 import Foundation
 
 func echoOnce(port: UInt16, message: String) -> String {
-    let clientFd = socket(AF_INET, SOCK_STREAM, 0)
+    let clientFd = socket(AF_INET, streamSocketType, 0)
     var target = sockaddr_in()
     target.sin_family = sa_family_t(AF_INET)
     target.sin_addr.s_addr = inet_addr("127.0.0.1")
@@ -26,7 +28,7 @@ func echoOnce(port: UInt16, message: String) -> String {
     return String(decoding: buffer[0..<Int(received)], as: UTF8.self)
 }
 
-let serverFd = socket(AF_INET, SOCK_STREAM, 0)
+let serverFd = socket(AF_INET, streamSocketType, 0)
 var addr = sockaddr_in()
 addr.sin_family = sa_family_t(AF_INET)
 addr.sin_addr.s_addr = inet_addr("127.0.0.1")
