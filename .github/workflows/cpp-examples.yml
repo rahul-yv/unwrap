@@ -14,12 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compile and run every single-file example and solution
+      - name: Install dependencies for the library-based topics
+        run: sudo apt-get update && sudo apt-get install -y libsqlite3-dev libssl-dev
+      - name: Compile and run every pure-C++ single-file example and solution
         run: |
           set -e
           out=$(mktemp -d)
           find languages/cpp \( -name "example.cpp" -o -path "*/solutions/exercise_*.cpp" \) \
-            -not -path "*/11_modules_packages/*" | while read -r f; do
+            -not -path "*/11_modules_packages/*" \
+            -not -path "*/13_networking/*" \
+            -not -path "*/14_databases/*" \
+            -not -path "*/15_concurrency/*" \
+            -not -path "*/16_security/*" | while read -r f; do
             echo "Running $f"
             bin="$out/$(basename "$f" .cpp)-$RANDOM"
             g++ -std=c++17 -Wall -Wextra -Werror "$f" -o "$bin"
@@ -34,3 +40,20 @@ jobs:
           "$out/example"
           g++ -std=c++17 -Wall -Wextra -Werror "$dir/solutions/exercise_1.cpp" "$dir/mypackage.cpp" -o "$out/exercise_1"
           "$out/exercise_1"
+      - name: Compile and run the library-based topics (POSIX / sqlite / threads / openssl)
+        run: |
+          set -e
+          out=$(mktemp -d)
+          run_topic() {
+            local dir="$1"; local std="$2"; shift 2
+            for f in "$dir/example.cpp" "$dir/solutions/exercise_1.cpp"; do
+              echo "Running $f"
+              bin="$out/$(basename "$(dirname "$(dirname "$f")")")-$(basename "$f" .cpp)-$RANDOM"
+              g++ -std="$std" -Wall -Wextra -Werror "$f" -o "$bin" "$@"
+              "$bin"
+            done
+          }
+          run_topic languages/cpp/13_networking gnu++17
+          run_topic languages/cpp/14_databases c++17 -lsqlite3
+          run_topic languages/cpp/15_concurrency c++17 -pthread
+          run_topic languages/cpp/16_security c++17 -lcrypto

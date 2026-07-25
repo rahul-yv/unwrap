@@ -155,12 +155,12 @@
       "10_files": "done",
       "11_modules_packages": "done",
       "12_testing": "done",
-      "13_networking": "not_started",
-      "14_databases": "not_started",
-      "15_concurrency": "not_started",
-      "16_security": "not_started",
-      "17_projects": "not_started",
-      "18_interview": "not_started"
+      "13_networking": "done",
+      "14_databases": "done",
+      "15_concurrency": "done",
+      "16_security": "done",
+      "17_projects": "done",
+      "18_interview": "done"
     },
     "csharp": {
       "01_variables": "not_started",
