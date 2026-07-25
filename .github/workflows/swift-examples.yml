@@ -21,7 +21,7 @@ jobs:
         run: |
           set -e
           find languages/swift \( -name "example.swift" -o -path "*/solutions/exercise_*.swift" \) \
-            -not -path "*/11_modules_packages/*" | while read -r f; do
+            -not -path "*/11_modules_packages/*" -not -path "*/16_security/*" | while read -r f; do
             echo "Running $f"
             swift "$f"
           done
@@ -34,3 +34,9 @@ jobs:
           "$out/example"
           swiftc "$dir/solutions/main.swift" "$dir/mypackage/Helpers.swift" -o "$out/exercise_1"
           "$out/exercise_1"
+      - name: Compile and run security (swift-crypto package)
+        run: |
+          set -e
+          cd languages/swift/16_security
+          swift run example
+          swift run exercise_1
