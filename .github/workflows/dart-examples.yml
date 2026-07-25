@@ -20,7 +20,15 @@ jobs:
       - name: Run every example and solution
         run: |
           set -e
-          find languages/dart \( -name "example.dart" -o -path "*/solutions/exercise_*.dart" \) | while read -r f; do
+          find languages/dart \( -name "example.dart" -o -path "*/solutions/exercise_*.dart" \) \
+            -not -path "*/14_databases/*" | while read -r f; do
             echo "Running $f"
             dart run --enable-asserts "$f"
           done
+      - name: Run databases (sqlite3 pub package)
+        run: |
+          set -e
+          cd languages/dart/14_databases
+          dart pub get
+          dart run --enable-asserts example.dart
+          dart run --enable-asserts solutions/exercise_1.dart
