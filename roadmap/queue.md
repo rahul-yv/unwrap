@@ -11,19 +11,21 @@ Working order. Update this as items complete or priorities shift — it's the "w
 - [x] Java topics 01-18 — Java track complete
 - [x] Rust topics 01-18 — Rust track complete
 - [x] C topics 01-18 — C track complete
+- [x] C++ topics 01-06 (variables → functions)
+- [ ] C++ topics 07-18 (collections → interview)
 
 ## Next
 
-- [ ] C++ topics 01-18
 - [ ] C# topics 01-18
 - [ ] Kotlin topics 01-18
+- [ ] Swift topics 01-18
 
 ## Later
 
-- C++, C#, Kotlin, Swift, PHP, Ruby, Dart — same 18-topic sequence
+- C#, Kotlin, Swift, PHP, Ruby, Dart — same 18-topic sequence
 - Cross-language comparison notes under `projects/comparisons/` once 3+ languages share a topic
 - Mini projects that combine multiple topics per language
 
 ## Notes
 
-- 2026-07-25: a sustained GitHub API outage (HTTP 500 on PR creation) blocked opening PRs. Per the non-blocking workflow, C 13-18 was built stacked on the unmerged `c/07-12-collections-testing` branch. Branches `c/07-12-collections-testing` and `c/13-18-networking-interview` are pushed and awaiting PR creation; a background retry is attempting to open them. Once the outage clears: open+merge 07-12 first, then rebase 13-18 onto main and open+merge it.
+- 2026-07-25: a sustained GitHub API outage (HTTP 500 on PR creation) temporarily blocked opening PRs. Per the non-blocking workflow, C 13-18 was built stacked on the then-unmerged `c/07-12` branch. Resolved: the outage cleared, #20 (C 07-12) merged, then C 13-18 was rebased onto main and merged as #21. No work was lost.
