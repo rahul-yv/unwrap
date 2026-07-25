@@ -15,12 +15,9 @@ threads = 10.times.map do
 end
 threads.each(&:join)
 # counter == 10
-
-# Ractor (since Ruby 3.0) provides true parallelism by running in separate,
-# isolated memory spaces (no shared mutable state, communicating via message passing)
-ractor = Ractor.new { 1 + 2 }
-result = ractor.value   # 3 — Ractor's API is still marked experimental as of recent Ruby versions
 ```
+
+For true parallelism, `Ractor` (since Ruby 3.0) runs code in separate, isolated memory spaces — no shared mutable state, communicating via message passing instead — which sidesteps the GVL entirely. Its API is still marked experimental and has changed across Ruby versions (`Ractor#value` vs `#take`, depending on version), so it's described here rather than included in the runnable example.
 
 See [`example.rb`](./example.rb) for the full runnable file.
 
