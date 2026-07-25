@@ -1,0 +1,26 @@
+name: dart-examples
+
+on:
+  pull_request:
+    paths:
+      - "languages/dart/**"
+  push:
+    branches: [main]
+    paths:
+      - "languages/dart/**"
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: "3.5"
+      - name: Run every example and solution
+        run: |
+          set -e
+          find languages/dart \( -name "example.dart" -o -path "*/solutions/exercise_*.dart" \) | while read -r f; do
+            echo "Running $f"
+            dart run --enable-asserts "$f"
+          done
