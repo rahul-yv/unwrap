@@ -30,7 +30,7 @@ Python, JavaScript, TypeScript, Java, Go, Rust, C, C++, C#, Kotlin, Swift, PHP, 
 
 See [`roadmap/progress.json`](roadmap/progress.json) for what's complete and [`roadmap/queue.md`](roadmap/queue.md) for what's next.
 
-## Contributing
+## Contributing.
 
 See [`standards/style-guide.md`](standards/style-guide.md), [`standards/folder-structure.md`](standards/folder-structure.md), and [`standards/writing-guidelines.md`](standards/writing-guidelines.md) before adding a lesson. Use [`standards/example-template.md`](standards/example-template.md) as the starting point for a new topic.
 
