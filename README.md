@@ -9,6 +9,7 @@ A free, open, structured guide to programming languages and software engineering
 Every topic follows the same shape: a plain-language explanation, runnable examples, common mistakes, an exercise with a solution, and interview-style questions.
 
 ## Structure
+
 ```
 languages/<language>/<topic>/   # per-language lessons, e.g. languages/python/06_functions
 projects/                       # mini projects that combine multiple topics
@@ -18,6 +19,7 @@ templates/                      # starting points for new lessons
 ```
 
 Each language covers the same topic sequence:
+
 `01_variables` → `02_datatypes` → `03_operators` → `04_conditions` → `05_loops` → `06_functions` → `07_collections` → `08_oop` → `09_errors` → `10_files` → `11_modules_packages` → `12_testing` → `13_networking` → `14_databases` → `15_concurrency` → `16_security` → `17_projects` → `18_interview`
 
 ## Languages covered
